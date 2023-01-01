@@ -1,2 +1,1 @@
-# Discussions
-IT Craft Development Team Discussions
+# [Click Here To Visit Our Forum](https://github.com/ITCraftDevelopmentTeam/Forum/discussions)
