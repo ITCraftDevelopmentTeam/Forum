@@ -37,7 +37,6 @@ body:
     id: age
     attributes:
       label: 您的年龄
-      description: 您的年龄
       placeholder: e.g. 114514
     validations:
       required: true
