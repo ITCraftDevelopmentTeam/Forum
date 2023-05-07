@@ -1,0 +1,63 @@
+name: "申请加入"
+description: "申请加入 IT Craft Development Team（简体中文）"
+title: "[加入申请] "
+labels: ["join application"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        如果您想加入 IT Craft Development Team，请填写下方表单。申请提交后，我们将会在 72 小时内处理。
+        另请注意，我们可能会要求您提交更多信息。因此，请关注您的 GitHub 绑定邮箱通知。若您未在 24 小时内回复我们的要求，我们将关闭您的申请，不过您还可以再次提交。
+  - type: checkboxes
+    id: agreement
+    attributes:
+      label: 群规协议
+      description: |
+        请确保您已仔细阅读以下群规：
+        1. 不违反相关法律法规。
+        2. 对于政治、病毒、广告等敏感话题，仅限适度讨论。
+        3. 请勿刷屏（连续5条无意义内容）。
+        4. 友善交流，禁止骂人等影响风气的行为。
+        请确认您已仔细阅读以上协议，并且同意遵守。
+      options:
+        - label: 我已阅读并同意以上协议。
+          required: true
+  - type: input
+    id: qq-id
+    attributes:
+      label: QQ号
+      description: 您的QQ号。
+      placeholder: e.g. 10000
+    validations:
+      required: true
+  - type: input
+    id: age
+    attributes:
+      label: 您的年龄
+      placeholder: e.g. 15
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: 您从哪里得知 IT Craft Development Team？
+      placeholder: e.g. GitHub
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: 为什么想加入 IT Craft Development Team？
+      description: 请简单说明您的原因。
+      placeholder: 
+    validations:
+      required: true
+  - type: textarea
+    id: other
+    attributes:
+      label: 介绍一下你自己
+      description: 你还想告诉我们什么？
+      placeholder: 什么都可以哦，没有就算了吧。
+    validations:
+      required: false
+
