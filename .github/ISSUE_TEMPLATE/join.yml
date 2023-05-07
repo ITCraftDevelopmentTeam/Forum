@@ -18,7 +18,7 @@ body:
         - xxtg来写
         - 您不得帮助他人违反这些规则。
         
-        对于任何违反上述协议、或是由我们判定为出现其它不合适的行为，我们将视情况终止对您的服务，并有权利公开相关的不良行为。
+        对于任何违反上述协议、或是由管理判定为出现其它不合适的行为，管理有权将您移出阻止，并有权利公开相关的不良行为。
       options:
         - label: 我同意以上协议
           required: true
@@ -30,6 +30,24 @@ body:
       placeholder: e.g. 10000
     validations:
       required: true
+  - type: markdown
+    attributes:
+      value: 为了方便我们更好的了解您，需要您提供以下信息
+  - type: input
+    id: age
+    attributes:
+      label: 您的年龄
+      description: 您的年龄
+      placeholder: e.g. 114514
+    validations:
+      required: true
+   - type: input
+     id: programing_language
+     attributes:
+      label: "您更擅长哪种编程语言？"
+      placeholder: "如果您不会，请留空"
+     validations:
+      required: false
   - type: textarea
     id: other
     attributes:
