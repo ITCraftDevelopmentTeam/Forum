@@ -41,11 +41,11 @@ body:
       placeholder: e.g. 114514
     validations:
       required: true
-   - type: input
-     id: programing_language
-     attributes:
+  - type: input
+    id: programing_language
+    attributes:
       label: 您更擅长哪种编程语言？
-     validations:
+    validations:
       required: false
   - type: textarea
     id: other
