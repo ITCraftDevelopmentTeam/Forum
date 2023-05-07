@@ -4,13 +4,13 @@ title: "[join application] "
 labels: ["join application"]
 body:
   - type: markdown
-    attributes.
+    attributes:
       value: |
         If you would like to join the IT Craft Development Team, please fill out the form below. Applications will be processed within 72 hours of submission.
         Please also note that we may ask you to submit additional information. So, please watch your GitHub bundle email for notifications. If you do not respond to our request within 24 hours, we will close your application, but you can submit it again.
   - type: checkboxes
     id: agreement
-    attributes.
+    attributes:
       label: group agreement
       description: |
         We believe you already know what not to do, summarized in these 5 points:
@@ -20,46 +20,46 @@ body:
         4. friendly communication, prohibit cursing and other behaviors that affect the morale;
         5. if you violate or help others to violate the above rules, we reserve the right to remove you from the organization.
         Please make sure you have read the above agreement carefully and agree to abide by it.
-      options.
+      options:
         - label: I have read and agree to the above agreement.
           required: true
   - type: input
     id: qq-id
-    attributes.
+    attributes:
       label: QQ number
       description: Your QQ number.
       placeholder: e.g. 10000
-    validations.
+    validations:
       required: true
   - type: input
     id: age
-    attributes.
+    attributes:
       label: Your age
       placeholder: e.g. 15
-    validations.
+    validations:
       required: true
   - type: input
     id: source
-    attributes.
+    attributes:
       label: Where did you hear about the IT Craft Development Team?
       placeholder: e.g. GitHub
-    validations.
+    validations:
       required: true
   - type: textarea
     id: reason
-    attributes.
+    attributes:
       label: Why do you want to join the IT Craft Development Team?
       description: Please briefly explain your reason.
-      placeholder. 
-    validations.
+      placeholder:
+    validations:
       required: true
   - type: textarea
     id: other
-    attributes.
+    attributes:
       label: Introduce yourself
       description: What else do you want to tell us?
       placeholder: You can tell us anything, but if you don't have one, forget it.
-    validations.
+    validations:
       required: false
 
 
