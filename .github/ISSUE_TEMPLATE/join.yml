@@ -44,8 +44,7 @@ body:
    - type: input
      id: programing_language
      attributes:
-      label: "您更擅长哪种编程语言？"
-      placeholder: "如果您不会，请留空"
+      label: 您更擅长哪种编程语言？
      validations:
       required: false
   - type: textarea
