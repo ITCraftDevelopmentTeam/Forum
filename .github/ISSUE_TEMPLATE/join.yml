@@ -45,8 +45,9 @@ body:
     id: programing_language
     attributes:
       label: 您更擅长哪种编程语言？
+      placeholder: e.g. Rust
     validations:
-      required: false
+      required: true
   - type: textarea
     id: other
     attributes:
