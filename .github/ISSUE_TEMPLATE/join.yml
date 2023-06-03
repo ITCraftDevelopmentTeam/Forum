@@ -1,7 +1,7 @@
 name: "申请加入"
 description: "申请加入 IT Craft Development Team（简体中文）"
 title: "[加入申请] "
-labels: ["join application"]
+labels: ["· Join-application"]
 body:
   - type: markdown
     attributes:
