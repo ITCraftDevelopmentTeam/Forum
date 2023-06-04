@@ -14,11 +14,11 @@ body:
       label: group agreement
       description: |
         We believe you already know what not to do, summarized in these 5 points:
-        1. do not violate the relevant laws and regulations;
-        2. for politics, viruses, advertising and other sensitive topics, only moderate discussion;
-        3. prohibit screen painting, screen hogging, excessive morbidity and other behaviors that affect normal chat;
-        4. friendly communication, prohibit cursing and other behaviors that affect the morale;
-        5. if you violate or help others to violate the above rules, we reserve the right to remove you from the organization.
+        1. Not to violate relevant laws and regulations;
+        2. Moderate discussion only on sensitive topics such as politics, viruses and advertising;
+        3. Prohibit acts such as screen painting, screen hogging, excessive morbidity and other acts that affect normal chatting;
+        4. Friendly communication and prohibition of swearing and other behaviour that affects the morale;
+        5. If you violate or help others to violate the above rules, we reserve the right to remove you from the organisation.
         Please make sure you have read the above agreement carefully and agree to abide by it.
       options:
         - label: I have read and agree to the above agreement.
