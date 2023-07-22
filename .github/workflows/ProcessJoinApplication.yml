@@ -95,7 +95,7 @@ jobs:
               with:
                 actions: 'create-comment'
                 token: ${{ secrets.GITHUB_TOKEN }}
-                issue-number: 1
+                issue-number: 14
                 body: ${{ steps.get-qq-num.outputs.qq }}
             - name: Rejected - Send Rejected Message
               if: steps.check-label.outputs.run-actions == 'rejected'
