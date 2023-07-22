@@ -46,6 +46,7 @@ jobs:
               uses: actions-cool/issues-helper@v3
               with:
                 actions: 'get-issue'
+                issue-number: ${{ github.event.issue.number }}
                 token: ${{ secrets.GITHUB_TOKEN }}
             - name: Approved - Get QQ Number
               if: steps.check-label.outputs.run-actions == 'approved'
@@ -55,6 +56,7 @@ jobs:
                   github-token: ${{ secrets.GITHUB_TOKEN }}
                   script: |
                     const body = "${{ steps.get-issue-info.outputs.issue-body }}";
+                    console.log(body);
                     function getQQNumberFromIssue(issueContent) {
                       const regex = /### QQ号\n\n(\d+)/;
                       const match = issueContent.match(regex);
