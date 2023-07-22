@@ -41,6 +41,7 @@ jobs:
                   另请注意，我们可能会要求您提交更多信息。因此，请关注您的 GitHub 绑定邮箱通知。
                   若您未在 24 小时内回复我们的要求，我们将关闭您的申请，不过您还可以再次提交。
             - name: Approved - Get Issue Info
+              if: steps.check-label.outputs.run-actions == 'approved'
               uses: mkungla/actions-set-text-output@v1
               id: get-issue-info
               with:
