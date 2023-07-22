@@ -1,0 +1,124 @@
+name: Process Join Application
+
+on:
+    issues:
+        types: 
+            - labeled
+
+jobs:
+    ProcessJoinApplication:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check Label
+              id: check-label
+              uses: actions/github-script@v5
+              with:
+                  github-token: ${{ secrets.GITHUB_TOKEN }}
+                  script: |
+                    let labels = context.payload.issue.labels.map((label) => label.name);
+                    let action = "none";
+                    if (!labels.includes("· Join-application")) {
+                      action = "none";
+                    } else if (labels.includes("√ Approved")) {
+                      action = "approved";
+                    } else if (labels.includes("× Rejected")) {
+                      action = "rejected";
+                    } else {
+                      action = "welcome";
+                    }
+                    console.log("Issue Action: "+action);
+                    core.setOutput("run-actions", action);
+            - name: Welcome - Send Welcome Message
+              if: steps.check-label.outputs.run-actions == 'welcome'
+              uses: actions-cool/issues-helper@v3.4.0
+              with:
+                actions: 'create-comment'
+                token: ${{ secrets.GITHUB_TOKEN }}
+                issue-number: ${{ github.event.issue.number }}
+                body: |
+                  我们已经收到了您的申请，并会在 72 小时内处理，请耐心等待。
+
+                  另请注意，我们可能会要求您提交更多信息。因此，请关注您的 GitHub 绑定邮箱通知。
+                  若您未在 24 小时内回复我们的要求，我们将关闭您的申请，不过您还可以再次提交。
+            - name: Approved - Get QQ Number
+              if: steps.check-label.outputs.run-actions == 'approved'
+              id: get-qq-num
+              uses: actions/github-script@v5
+              with:
+                  github-token: ${{ secrets.GITHUB_TOKEN }}
+                  script: |
+                    const body = "${{ steps.get-qq-num.outputs.qq }}";
+                    function getQQNumberFromIssue(issueContent) {
+                      const regex = /### QQ号\n\n(\d+)/;
+                      const match = issueContent.match(regex);
+                      if (match && match[1]) {
+                        return match[1];
+                      }
+                      const regex_en = /### QQ number\n\n(\d+)/;
+                      const match_en = issueContent.match(regex_en);
+                      if (match_en && match_en[1]) {
+                        return match_en[1];
+                      }
+                      return "null";
+                    }
+                    core.setOutput("qq", getQQNumberFromIssue(body));
+            - name: Approved - Send Approved Message
+              if: steps.check-label.outputs.run-actions == 'approved'
+              uses: actions-cool/issues-helper@v3.4.0
+              with:
+                actions: 'create-comment'
+                token: ${{ secrets.GITHUB_TOKEN }}
+                issue-number: ${{ github.event.issue.number }}
+                body: |
+                  恭喜您，我们已经同意您的申请！
+
+                  欢迎加入 IT Craft Development Team。请尽快用您的 QQ 号 `${{ steps.get-qq-num.outputs.qq }}` 申请加入 QQ 群 `701257458`，我们在那里等您！
+
+                  再次提醒，请注意，加入群后，请遵守以下群规：
+
+                  不违反相关法律法规；
+                  对于政治、病毒、广告等敏感话题，仅限适度讨论；
+                  禁止刷屏、霸屏、过度发病等影响正常聊天的行为；
+                  友善交流，禁止骂人等影响风气的行为；
+                  感谢您的理解和配合！
+            - name: Approved - Close Issue As Completed
+              if: steps.check-label.outputs.run-actions == 'approved'
+              uses: actions-cool/issues-helper@v3.4.0
+              with:
+                actions: 'close-issue'
+                token: ${{ secrets.GITHUB_TOKEN }}
+                issue-number: ${{ github.event.issue.number }}
+                close-reason: 'completed'
+            - name: Approved - Add To Approved List
+              if: steps.check-label.outputs.run-actions == 'approved'
+              uses: actions-cool/issues-helper@v3.4.0
+              with:
+                actions: 'create-comment'
+                token: ${{ secrets.GITHUB_TOKEN }}
+                issue-number: 1
+                body: ${{ steps.get-qq-num.outputs.qq }}
+            - name: Rejected - Send Rejected Message
+              if: steps.check-label.outputs.run-actions == 'rejected'
+              uses: actions-cool/issues-helper@v3.4.0
+              with:
+                actions: 'create-comment'
+                token: ${{ secrets.GITHUB_TOKEN }}
+                issue-number: ${{ github.event.issue.number }}
+                body: |
+                  感谢您对 IT Craft Development Team 的兴趣和支持。我们很高兴收到您的加入申请，但很遗憾地通知您，您的申请没有通过。
+
+                  我们寻找具有创新能力或与我们志同道合的成员。根据您提交的申请，我们认为您的思想或技能水平还不符合我们的要求。我们建议您在以下方面提高自己：
+                  
+                  - 掌握至少一种主流编程语言，如 Python, Java, Rust 等。
+                  - 了解常用的软件开发工具，如 VSCode, Pycharm, IDEA 等。
+                  - 参与一些有创新性的项目，展示您的解决问题和协作能力。
+                  
+                  我们对您的未来发展表示祝福，并希望您能够继续关注我们的团队动态。如果您有任何疑问或反馈，请随时联系我们。
+            - name: Rejected - Close Issue As Not Planned
+              if: steps.check-label.outputs.run-actions == 'rejected'
+              uses: actions-cool/issues-helper@v3.4.0
+              with:
+                actions: 'close-issue'
+                token: ${{ secrets.GITHUB_TOKEN }}
+                issue-number: ${{ github.event.issue.number }}
+                close-reason: 'not_planned'
