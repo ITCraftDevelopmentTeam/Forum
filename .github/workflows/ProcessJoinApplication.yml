@@ -47,7 +47,7 @@ jobs:
               with:
                   github-token: ${{ secrets.GITHUB_TOKEN }}
                   script: |
-                    const body = "{{ github.event.issue.body }}";
+                    const body = "${{ github.event.issue.body }}";
                     console.log(body);
                     function getQQNumberFromIssue(issueContent) {
                       const regex = /### QQ号\n\n(\d+)/;
