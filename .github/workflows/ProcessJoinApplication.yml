@@ -40,6 +40,13 @@ jobs:
 
                   另请注意，我们可能会要求您提交更多信息。因此，请关注您的 GitHub 绑定邮箱通知。
                   若您未在 24 小时内回复我们的要求，我们将关闭您的申请，不过您还可以再次提交。
+            - name: Approved - Get Issue Info
+              if: steps.check-label.outputs.run-actions == 'approved'
+              id: get-issue-info
+              uses: actions-cool/issues-helper@v3
+              with:
+                actions: 'get-issue'
+                token: ${{ secrets.GITHUB_TOKEN }}
             - name: Approved - Get QQ Number
               if: steps.check-label.outputs.run-actions == 'approved'
               id: get-qq-num
@@ -47,7 +54,7 @@ jobs:
               with:
                   github-token: ${{ secrets.GITHUB_TOKEN }}
                   script: |
-                    const body = "${{ steps.get-qq-num.outputs.qq }}";
+                    const body = "${{ steps.get-issue-info.outputs.issue-body }}";
                     function getQQNumberFromIssue(issueContent) {
                       const regex = /### QQ号\n\n(\d+)/;
                       const match = issueContent.match(regex);
