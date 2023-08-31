@@ -1,0 +1,63 @@
+name: "申請加入"
+description: "申請加入 IT Craft Development Team（繁體中文）"
+title: "[加入申請] "
+labels: ["· Join-application"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        如果您想加入 IT Craft Development Team，請填寫下方表單。申請提交後，我們將會在 72 小時內處理。
+        另請注意，我們可能會要求您提交更多資訊。因此，請關注您的 GitHub 綁定郵箱通知。若您未在 24 小時內回覆我們的要求，我們將關閉您的申請，不過您還可以再次提交。
+  - type: checkboxes
+    id: agreement
+    attributes:
+      label: 群規協議
+      description: |
+        我們相信您已經知道什麼是不應該做的，總結起來無非是這 4 點：
+        1. 請保持文明用語，促進良好的氛圍；
+        2. 請注意言辭，避免過激或沖動的發言；
+        3. 請避免發表不合適和極端的觀點；
+        4. 請遵守現行相關法律法規。
+        請確認您已仔細閱讀以上協議，並且同意遵守。
+      options:
+        - label: 我已閱讀並同意以上協議。
+          required: true
+  - type: input
+    id: qq-id
+    attributes:
+      label: QQ號
+      description: 您的QQ號。如果您只想加入我們的 Discord 伺服器，請在「介紹一下你自己」備註。
+      placeholder: e.g. 10000
+    validations:
+      required: true
+  - type: input
+    id: age
+    attributes:
+      label: 您的年齡
+      placeholder: e.g. 15
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: 您從哪裡得知 IT Craft Development Team？
+      placeholder: e.g. GitHub
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: 為什麼想加入 IT Craft Development Team？
+      description: 請簡單說明您的原因。
+      placeholder:
+    validations:
+      required: true
+  - type: textarea
+    id: other
+    attributes:
+      label: 介紹一下你自己
+      description: 你還想告訴我們什麼？
+      placeholder: 什麼都可以哦，沒有就算了吧。如果您需要加入我們的 Discord 群組，請備註您的使用者名稱。
+    validations:
+      required: false
+
