@@ -74,14 +74,6 @@ jobs:
                   恭喜您，我们已经同意您的申请！
 
                   欢迎加入 IT Craft Development Team。请尽快用您的 QQ 号 `${{ steps.get-qq-num.outputs.qq }}` 申请加入 QQ 群 `701257458`，我们在那里等您！
-
-                  再次提醒，请注意，加入群后，请遵守以下群规：
-
-                  不违反相关法律法规；
-                  对于政治、病毒、广告等敏感话题，仅限适度讨论；
-                  禁止刷屏、霸屏、过度发病等影响正常聊天的行为；
-                  友善交流，禁止骂人等影响风气的行为；
-                  感谢您的理解和配合！
             - name: Approved - Close Issue As Completed
               if: steps.check-label.outputs.run-actions == 'approved'
               uses: actions-cool/issues-helper@v3.4.0
