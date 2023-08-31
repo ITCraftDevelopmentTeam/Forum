@@ -1,7 +1,7 @@
 name: "Join Application"
 description: "Application to join IT Craft Development Team (American English)"
 title: "[Join Request] "
-labels: ["· Join-application"]
+labels: ["·Join-application"]
 body:
   - type: markdown
     attributes:
