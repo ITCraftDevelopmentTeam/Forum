@@ -1,63 +1,63 @@
-name: "Apply to join"
-description: "Apply to join IT Craft Development Team (American English)"
-title: "[join application] "
+name: "Join Application"
+description: "Application to join IT Craft Development Team (American English)"
+title: "[Join Request] "
 labels: ["· Join-application"]
 body:
   - type: markdown
     attributes:
       value: |
-        If you would like to join the IT Craft Development Team, please fill out the form below. Applications will be processed within 72 hours of submission.
-        Please also note that we may ask you to submit additional information. So, please watch your GitHub bundle email for notifications. If you do not respond to our request within 24 hours, we will close your application, but you can submit it again.
+        If you're interested in joining the IT Craft Development Team, please fill out the form below. Once submitted, we will process your application within 72 hours.
+        Additionally, note that we might request more information from you. Thus, please keep an eye on notifications sent to your GitHub-associated email. If you don't respond to our queries within 24 hours, we'll close your application, but you can always reapply.
   - type: checkboxes
     id: agreement
     attributes:
-      label: group agreement
+      label: Group Agreement
       description: |
-        We believe you already know what not to do, summarized in these 5 points:
-        1. Not to violate relevant laws and regulations;
-        2. Moderate discussion only on sensitive topics such as politics, viruses and advertising;
-        3. Prohibit acts such as screen painting, screen hogging, excessive morbidity and other acts that affect normal chatting;
-        4. Friendly communication and prohibition of swearing and other behaviour that affects the morale;
-        5. If you violate or help others to violate the above rules, we reserve the right to remove you from the organisation.
-        Please make sure you have read the above agreement carefully and agree to abide by it.
+        We trust you already know what shouldn't be done. In summary, these are the 4 points:
+        1. Maintain civil language and foster a positive atmosphere;
+        2. Be cautious with your words, avoiding aggressive or impulsive remarks;
+        3. Avoid sharing inappropriate or extreme views;
+        4. Adhere to all relevant laws and regulations.
+        Please confirm you have carefully read the agreement above and agree to abide by it.
       options:
-        - label: I have read and agree to the above agreement.
+        - label: I have read and agree to the terms above.
           required: true
   - type: input
     id: qq-id
     attributes:
-      label: QQ number
-      description: Your QQ number.
+      label: QQ Number
+      description: Your QQ number. If you only wish to join our Discord server, please note it under "Introduce Yourself".
       placeholder: e.g. 10000
     validations:
       required: true
   - type: input
     id: age
     attributes:
-      label: Your age
+      label: Your Age
       placeholder: e.g. 15
     validations:
       required: true
   - type: input
     id: source
     attributes:
-      label: Where did you hear about the IT Craft Development Team?
+      label: How did you learn about IT Craft Development Team?
       placeholder: e.g. GitHub
     validations:
       required: true
   - type: textarea
     id: reason
     attributes:
-      label: Why do you want to join the IT Craft Development Team?
-      description: Please briefly explain your reason.
+      label: Why do you want to join IT Craft Development Team?
+      description: Please briefly explain your reasons.
       placeholder:
     validations:
       required: true
   - type: textarea
     id: other
     attributes:
-      label: Introduce yourself
-      description: What else do you want to tell us?
-      placeholder: You can tell us anything, but if you don't have one, forget it.
+      label: Introduce Yourself
+      description: Anything else you'd like to tell us?
+      placeholder: Anything goes here. If you don't have anything, that's alright. If you wish to join our Discord group, please mention your username.
     validations:
       required: false
+
