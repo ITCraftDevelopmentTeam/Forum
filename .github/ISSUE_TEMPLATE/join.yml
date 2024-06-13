@@ -55,9 +55,9 @@ body:
   - type: textarea
     id: distinguish-nouns
     attributes:
-      label: ITCDT面试题
+      label: 区分名词
       description: |
-        区分以下名词：
+        （非必填项，只是测试您对ITCDT的了解程度）尝试区分以下名词：
         Moonlark
         XDbot2
         XDbot
@@ -71,9 +71,23 @@ body:
         XDbot2 Team
         IT Craft Studio
         IT Craft Development Team
-      placeholder: 
+      placeholder: |
+        1. Moonlark - 慕恩拉克
+        2. XDbot2 - 西迪波特贰
+        3. XDbot - 西迪波特
+        4. XDbot Core - 西迪波特科尔
+        5. XDbot Plus - 西迪波特普拉斯
+        6. XDbot 0x01 - 西迪波特零艾克斯零一
+        7. XiaoDeng3386 - 萧登三三八六
+        8. XDbot Projects - 西迪波特普洛杰克斯
+        9. Moonlark Projects - 慕恩拉克普洛杰克斯
+        10. Moonlark Development Team - 慕恩拉克迪维洛普门特提安
+        11. Moonlark Project - 慕恩拉克普洛杰克
+        12. XDbot2 Team - 西迪波特贰提安
+        13. IT Craft Studio - 艾提克拉夫特斯图迪奥
+        14. IT Craft Development Team - 艾提克拉夫特迪维洛普门特提安
     validations:
-      required: true
+      required: false
   - type: textarea
     id: other
     attributes:
