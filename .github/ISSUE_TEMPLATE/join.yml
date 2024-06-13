@@ -53,6 +53,28 @@ body:
     validations:
       required: true
   - type: textarea
+    id: distinguish-nouns
+    attributes:
+      label: ITCDT面试题
+      description: |
+        区分以下名词：
+        Moonlark
+        XDbot2
+        XDbot
+        XDbot Core
+        XDbot Plus
+        XDbot 0x01
+        XDbot Projects
+        Moonlark Projects
+        Moonlark Development Team
+        Moonlark Project
+        XDbot2 Team
+        IT Craft Studio
+        IT Craft Development Team
+      placeholder: 
+    validations:
+      required: true
+  - type: textarea
     id: other
     attributes:
       label: 介绍一下你自己
