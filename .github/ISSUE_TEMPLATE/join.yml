@@ -23,13 +23,13 @@ body:
         - label: 我已阅读并同意以上协议。
           required: true
   - type: input
-    id: qq-id
+    id: chat-id
     attributes:
-      label: QQ号
-      description: 您的QQ号。如果您只想加入我们的 Discord 服务器，请在「介绍一下你自己」备注。
-      placeholder: e.g. 10000
+      label: 聊天平台账号
+      description: 您的聊天平台账号。
+      placeholder: 填写此项是为了方便管理员确认身份，如担心隐私泄露不填写也可以。
     validations:
-      required: true
+      required: false
   - type: input
     id: age
     attributes:
