@@ -26,8 +26,8 @@ body:
     id: chat-id
     attributes:
       label: 聊天平台账号
-      description: 您的聊天平台账号。
-      placeholder: 填写此项是为了方便管理员确认身份，如担心隐私泄露不填写也可以。
+      description: 此项是为了方便管理员确认身份，如担心隐私泄露不填写也可以。
+      placeholder: 
     validations:
       required: false
   - type: input
