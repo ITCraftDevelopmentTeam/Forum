@@ -23,11 +23,11 @@ body:
         - label: 我已閱讀並同意以上協議。
           required: true
   - type: input
-    id: qq-id
+    id: chat-id
     attributes:
-      label: QQ號
-      description: 您的QQ號。如果您只想加入我們的 Discord 伺服器，請在「介紹一下你自己」備註。
-      placeholder: e.g. 10000
+      label: 聯繫方式
+      description: 您的 QQ / Discord / 電子郵件地址，任選一個填寫即可。
+      placeholder: 
     validations:
       required: true
   - type: input
