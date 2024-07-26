@@ -57,7 +57,7 @@ body:
     attributes:
       label: Introduce Yourself
       description: Anything else you'd like to tell us?
-      placeholder: Anything goes here. If you don't have anything, that's alright. If you wish to join our Discord group, please mention your username.
+      placeholder: Anything goes here. If you don't have anything, that's alright.
     validations:
       required: false
 
