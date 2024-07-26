@@ -25,11 +25,11 @@ body:
   - type: input
     id: chat-id
     attributes:
-      label: Chat platform account
-      description: This is to facilitate the administrator to confirm the identity, such as the fear of privacy leakage do not fill in the can also be.
+      label: Contact Details
+      description: Your QQ / Discord / e-mail address, choose one to fill in.
       placeholder: 
     validations:
-      required: false
+      required: true
   - type: input
     id: age
     attributes:
