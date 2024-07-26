@@ -25,11 +25,11 @@ body:
   - type: input
     id: chat-id
     attributes:
-      label: 聊天平台账号
-      description: 此项是为了方便管理员确认身份，如担心隐私泄露不填写也可以。
+      label: 联系方式
+      description: 您的 QQ / Discord / 邮件地址，任选一个填写即可。
       placeholder: 
     validations:
-      required: false
+      required: true
   - type: input
     id: age
     attributes:
