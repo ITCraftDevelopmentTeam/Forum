@@ -57,7 +57,7 @@ body:
     attributes:
       label: 介绍一下你自己
       description: 你还想告诉我们什么？
-      placeholder: 什么都可以哦，没有就算了吧。如果您需要加入我们的 Discord 群组，请备注您的用户名。
+      placeholder: 什么都可以哦，没有就算了吧。
     validations:
       required: false
 
