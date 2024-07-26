@@ -29,7 +29,7 @@ body:
       description: This is to facilitate the administrator to confirm the identity, such as the fear of privacy leakage do not fill in the can also be.
       placeholder: 
     validations:
-      required: true
+      required: false
   - type: input
     id: age
     attributes:
