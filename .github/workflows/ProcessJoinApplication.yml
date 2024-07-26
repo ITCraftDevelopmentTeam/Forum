@@ -40,29 +40,6 @@ jobs:
 
                   另请注意，我们可能会要求您提交更多信息。因此，请关注您的 GitHub 绑定邮箱通知。
                   若您未在 24 小时内回复我们的要求，我们将关闭您的申请，不过您还可以再次提交。
-            - name: Approved - Get QQ Number
-              if: steps.check-label.outputs.run-actions == 'approved'
-              id: get-qq-num
-              uses: actions/github-script@v5
-              with:
-                  github-token: ${{ secrets.GITHUB_TOKEN }}
-                  script: |
-                    const body = context.payload.issue.body;
-                    console.log(body);
-                    function getQQNumberFromIssue(issueContent) {
-                      const regex = /### QQ号\n\n(\d+)/;
-                      const match = issueContent.match(regex);
-                      if (match && match[1]) {
-                        return match[1];
-                      }
-                      const regex_en = /### QQ number\n\n(\d+)/;
-                      const match_en = issueContent.match(regex_en);
-                      if (match_en && match_en[1]) {
-                        return match_en[1];
-                      }
-                      return "null";
-                    }
-                    core.setOutput("qq", getQQNumberFromIssue(body));
             - name: Approved - Send Approved Message
               if: steps.check-label.outputs.run-actions == 'approved'
               uses: actions-cool/issues-helper@v3.4.0
@@ -71,9 +48,7 @@ jobs:
                 token: ${{ secrets.GITHUB_TOKEN }}
                 issue-number: ${{ github.event.issue.number }}
                 body: |
-                  恭喜您，我们已经同意您的申请！
-
-                  欢迎加入 IT Craft Development Team。请尽快用您的 QQ 号 `${{ steps.get-qq-num.outputs.qq }}` 申请加入 QQ 群 `701257458`，我们在那里等您！
+                  恭喜您，我们已经同意您的申请！欢迎加入 IT Craft Development Team！
             - name: Approved - Close Issue As Completed
               if: steps.check-label.outputs.run-actions == 'approved'
               uses: actions-cool/issues-helper@v3.4.0
@@ -82,14 +57,6 @@ jobs:
                 token: ${{ secrets.GITHUB_TOKEN }}
                 issue-number: ${{ github.event.issue.number }}
                 close-reason: 'completed'
-            - name: Approved - Add To Approved List
-              if: steps.check-label.outputs.run-actions == 'approved'
-              uses: actions-cool/issues-helper@v3.4.0
-              with:
-                actions: 'create-comment'
-                token: ${{ secrets.GITHUB_TOKEN }}
-                issue-number: 14
-                body: ${{ steps.get-qq-num.outputs.qq }}
             - name: Rejected - Send Rejected Message
               if: steps.check-label.outputs.run-actions == 'rejected'
               uses: actions-cool/issues-helper@v3.4.0
