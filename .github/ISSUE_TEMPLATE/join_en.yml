@@ -23,11 +23,11 @@ body:
         - label: I have read and agree to the terms above.
           required: true
   - type: input
-    id: qq-id
+    id: chat-id
     attributes:
-      label: QQ Number
-      description: Your QQ number. If you only wish to join our Discord server, please note it under "Introduce Yourself".
-      placeholder: e.g. 10000
+      label: Chat platform account
+      description: This is to facilitate the administrator to confirm the identity, such as the fear of privacy leakage do not fill in the can also be.
+      placeholder: 
     validations:
       required: true
   - type: input
