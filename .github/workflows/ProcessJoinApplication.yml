@@ -23,7 +23,7 @@ jobs:
                       action = "approved";
                     } else if (labels.includes("× Rejected")) {
                       action = "rejected";
-                    } else if (labels.includes("🚧 Pending")) {
+                    } else if (labels.includes("⌛ Pending")) {
                       action = "none";
                     } else {
                       action = "welcome";
