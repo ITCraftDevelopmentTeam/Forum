@@ -32,7 +32,7 @@ jobs:
                     core.setOutput("run-actions", action);
             - name: Welcome - Send Welcome Message
               if: steps.check-label.outputs.run-actions == 'welcome'
-              uses: actions-cool/issues-helper@v3.4.0
+              uses: actions-cool/issues-helper@v3.7.5
               with:
                 actions: 'create-comment'
                 token: ${{ secrets.GITHUB_TOKEN }}
@@ -44,7 +44,7 @@ jobs:
                   若您未在 24 小时内回复我们的要求，我们将关闭您的申请，不过您还可以再次提交。
             - name: Approved - Send Approved Message
               if: steps.check-label.outputs.run-actions == 'approved'
-              uses: actions-cool/issues-helper@v3.4.0
+              uses: actions-cool/issues-helper@v3.7.5
               with:
                 actions: 'create-comment'
                 token: ${{ secrets.GITHUB_TOKEN }}
@@ -53,7 +53,7 @@ jobs:
                   恭喜您，我们已经同意您的申请！欢迎加入 IT Craft Development Team！
             - name: Approved - Close Issue As Completed
               if: steps.check-label.outputs.run-actions == 'approved'
-              uses: actions-cool/issues-helper@v3.4.0
+              uses: actions-cool/issues-helper@v3.7.5
               with:
                 actions: 'close-issue'
                 token: ${{ secrets.GITHUB_TOKEN }}
@@ -61,7 +61,7 @@ jobs:
                 close-reason: 'completed'
             - name: Rejected - Send Rejected Message
               if: steps.check-label.outputs.run-actions == 'rejected'
-              uses: actions-cool/issues-helper@v3.4.0
+              uses: actions-cool/issues-helper@v3.7.5
               with:
                 actions: 'create-comment'
                 token: ${{ secrets.GITHUB_TOKEN }}
@@ -78,7 +78,7 @@ jobs:
                   我们对您的未来发展表示祝福，并希望您能够继续关注我们的团队动态。如果您有任何疑问或反馈，请随时联系我们。
             - name: Rejected - Close Issue As Not Planned
               if: steps.check-label.outputs.run-actions == 'rejected'
-              uses: actions-cool/issues-helper@v3.4.0
+              uses: actions-cool/issues-helper@v3.7.5
               with:
                 actions: 'close-issue'
                 token: ${{ secrets.GITHUB_TOKEN }}
